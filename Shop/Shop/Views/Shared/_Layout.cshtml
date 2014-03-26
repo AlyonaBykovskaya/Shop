@@ -1,0 +1,91 @@
+﻿@using Shop.Models
+@model IEnumerable<Book>
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset=utf-8 />
+    <title>@ViewBag.Title</title>
+  @Styles.Render("~/Content/templatemo_style.css")
+    <meta name="keywords" content="Книжный магазин, Книги, Купить книгу" />
+    <meta name="description" content="Книжный магазин" />
+</head>
+<body>
+<div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+            <li>@Html.ActionLink("Главная","Index","Home")</li>
+            <li> @Html.ActionLink("Книги","Books","Books")</li>            
+            <li>@Html.ActionLink("Наши магазины","Shops","Shops") </li>  
+            <li>@Html.ActionLink("Корзина покупок","Box","Box")</li> 
+            <li>@Html.ActionLink("Контакты","Contacts","Contacts")</li>
+    	</ul>
+    </div> <!-- end of menu -->
+    
+    <div id="templatemo_header">
+    	<div id="templatemo_special_offers">
+        	<p>
+                <span>25%</span> скидка при
+        покупке от 200 грн.
+        	</p>
+        </div>
+        
+        
+        <div id="templatemo_new_books">
+        	<ul>
+                <li>Новый дозор</li>
+                <li>Новые приключения Шерлока Холмса</li>
+            </ul>
+            @Html.ActionLink("Подробнее...","Books","Books")
+        </div>
+    </div> <!-- end of header -->
+    
+    <div id="templatemo_content">
+    	
+        <div id="templatemo_content_left">
+        	<div class="templatemo_content_left_section">
+            	<h1>Категории</h1>
+                <ul>
+				<li>@Html.ActionLink("Классика","Classic","Classic")</li>
+                    <li>@Html.ActionLink("Современная литература","Litera","Litera")</li>
+                    <li>@Html.ActionLink("Домоводство(дом и семья)","Dom","Dom")</li>
+            	</ul>
+            </div>
+			<div class="templatemo_content_left_section">
+            	<h1>Бестселлеры</h1>
+                <ul>
+                    <li>@Html.ActionLink("Большая кулинарная книга","Kulinar","Kulinar")</li>
+                    <li>@Html.ActionLink("Новый дозор","Dozor","Dozor")</li>
+                    <li>@Html.ActionLink("Дом шелка.Новые приключения Шерлока Холмса","Sherlock","Sherlock")</li>
+
+            	</ul>
+            </div>
+            
+          
+        </div> <!-- end of content left -->
+        
+       
+        @RenderSection("main",required:false)
+        @RenderSection("box",required:false)
+        @RenderSection("shops",required:false)
+        @RenderSection("books",required:false)
+        @RenderSection("contacts",required:false)
+        @RenderSection("dom",required:false)
+        @RenderSection("litera",required:false)
+        @RenderSection("classic",required:false)
+        @RenderSection("sherlock",required:false)
+        @RenderSection("kulinar",required:false)
+        @RenderSection("dozor",required:false)
+
+      
+</div>
+    <div id="templatemo_footer">
+    
+	        @Html.ActionLink("Главная","Index","Home") |  @Html.ActionLink("Книги","Books","Books") |  @Html.ActionLink("Наши магазины","Shops","Shops")  | @Html.ActionLink("Корзина покупок","Box","Box") |  @Html.ActionLink("Контакты","Contacts","Contacts")<br />
+        Copyright © 2014 @Html.ActionLink("Книжный магазин","Index","Home")  | Designed by <a href="http://vk.com/id136595603" target="_parent">Быковская Алена</a>	</div> 
+    <!-- end of footer -->
+<!--  Free CSS Template www.templatemo.com -->
+ <!-- end of container -->
+</body>
+</html>

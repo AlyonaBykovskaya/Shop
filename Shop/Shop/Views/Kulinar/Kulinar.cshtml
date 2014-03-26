@@ -1,0 +1,31 @@
+﻿@using Shop.Models
+@{
+    ViewBag.Title = "Большая кулинарная книга";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section kulinar{
+     <div id="templatemo_content_right">
+        	<div class="templatemo_product_box">
+
+         @foreach (Book b in Model)
+         {
+            if(b.Number==7)
+             {
+                       <h1>@b.Name<span>(@b.Author)</span></h1>
+               <img src="~/Content/images/кулинар.jpg" alt="image" />
+                <div class="product_info">
+                	<p>@b.Description</p>
+                  <h3>@b.Price грн.</h3>
+                    <div class="buy_now_button">@Html.ActionLink("Купить сейчас","Box","Box")</div>
+                </div>
+                <div class="cleaner">&nbsp;</div>    
+             
+         }
+        }
+               
+            </div>
+            
+            <div class="cleaner_with_width">&nbsp;</div>
+            </div>
+}

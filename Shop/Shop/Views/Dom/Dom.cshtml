@@ -1,0 +1,73 @@
+﻿@using Shop.Models
+@{
+    ViewBag.Title = "Домоводство";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section dom
+{
+    <div id="templatemo_content_right">
+        <div class="templatemo_product_box">
+
+            @foreach (Book b in Model)
+            {
+                if (b.Number == 7)
+                {
+                    <h1>@b.Name<span>(@b.Author)</span></h1>
+                    <img src="~/Content/images/кулинар.jpg" alt="image" />
+                    <div class="product_info">
+                        <p>@b.Description</p>
+                        <h3>@b.Price грн.</h3>
+                        <div class="buy_now_button">@Html.ActionLink("Купить сейчас", "Box", "Box")</div>
+                    </div>
+                    <div class="cleaner">&nbsp;</div>
+
+                }
+            }
+               
+        </div>
+            
+        <div class="cleaner_with_width">&nbsp;</div>
+            
+        <div class="templatemo_product_box">
+            @foreach (Book b in Model)
+            {
+                if (b.Number == 8)
+                {
+                    <h1>@b.Name<span>(@b.Author)</span></h1>
+                    <img src="~/Content/images/акварель.jpg" alt="image" />
+                    <div class="product_info">
+                        <p>@b.Description</p>
+                        <h3>@b.Price грн.</h3>
+                        <div class="buy_now_button">@Html.ActionLink("Купить сейчас", "Box", "Box")</div>
+                    </div>
+                    <div class="cleaner">&nbsp;</div>
+                }
+            }
+        </div>
+            
+        <div class="cleaner_with_height">&nbsp;</div>
+            
+        <div class="templatemo_product_box">
+            @foreach (Book b in Model)
+            {
+                if (b.Number == 9)
+                {
+                    <h1>@b.Name<span>(@b.Author)</span></h1>
+                    <img src="~/Content/images/суши.jpg" alt="image" />
+                    <div class="product_info">
+                        <p>@b.Description</p>
+                        <h3>@b.Price грн.</h3>
+                        <div class="buy_now_button">@Html.ActionLink("Купить сейчас", "Box", "Box")</div>
+                    </div>
+                    <div class="cleaner">&nbsp;</div>
+                }
+            }
+        </div>
+            
+        <div class="cleaner_with_width">&nbsp;</div>
+            
+    
+        <div class="cleaner_with_height">&nbsp;</div>
+    </div> 
+}
